@@ -1,0 +1,76 @@
+{
+  "name": "aframe-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hmr": "parcel serve src/index.html --port=8000",
+    "watch": "parcel watch src/index.html --no-hmr -d dist",
+    "serve": "live-server --port=8000 ./dist/",
+    "build": "parcel build src/index.html -d dist",
+    "tsc": "npx tsc --noEmit && npx tsc --noEmit -p ./tests/tsconfig.json",
+    "prettier": "npx prettier --parser typescript --write \"./src/*.ts\"",
+    "lint": "eslint src/index.ts",
+    "test": "jest --silent=false --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cycle/dom": "^22.4.0",
+    "@cycle/run": "^5.3.0",
+    "@cycle/xstream-run": "^4.2.0",
+    "aframe": "^0.9.2",
+    "aframe-dev-components": "git://github.com/caseyyee/aframe-dev-components.git",
+    "aframe-teleport-controls": "^0.3.1",
+    "ajv": "^6.10.2",
+    "better-ajv-errors": "^0.6.7",
+    "lodash": "^4.17.15",
+    "xstream": "^11.11.0"
+  },
+  "devDependencies": {
+    "@types/aframe": "^0.8.3",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.141",
+    "@types/node": "^12.7.11",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3",
+    "typescript-formatter": "^7.2.2",
+    "typescript-json-schema": "^0.40.0",
+    "utility-types": "^3.8.0"
+  },
+  "prettier": {
+    "arrowParens": "always"
+  },
+  "jest": {
+    "roots": [
+      "."
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testEnvironment": "node"
+  }
+}
